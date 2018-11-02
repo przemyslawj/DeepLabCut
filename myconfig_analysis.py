@@ -3,7 +3,7 @@
 #########################################################################################
 # This configuration file sets various parameters for running a trained model on videos!
 #
-# First, make sure that the network performed well on the train/test data set. 
+# First, make sure that the network performed well on the train/test data set.
 #
 # The pose output is saved as hdf file with a name containing the video name as well as the network name
 # You can also save the output as csv (see below) or in many other formats see https://github.com/AlexEMG/DeepLabCut/issues/17
@@ -11,9 +11,9 @@
 #########################################################################################
 
 # Filename and path to behavioral video for analysis
-videofolder = '../videos/'
+videofolder = '/mnt/DATA/Prez/conditioning/2018-11-01/movie'
 cropping = False
-videotype='.avi' #type of videos to analyze 
+videotype='.avi' #type of videos to analyze
 
 #Note: under the hood there is moviepy, which can handle many types of videos:
 #See: https://zulko.github.io/moviepy/_modules/moviepy/video/io/VideoFileClip.html
@@ -29,29 +29,29 @@ y1 = 277
 y2 = 624
 
 #########################################################################################
-# Analysis Network parameters 
+# Analysis Network parameters
 #########################################################################################
 
 # These variables should be changed so that the right networks is loaded for analysis
 # (Typicaly just copy them over from myconfig.py)
-scorer = 'Mackenzie'
-Task = 'reaching'
-date = 'Jan30'
-trainingsFraction = 0.95  
+scorer = 'Prez'
+Task = 'cheeseboard'
+date = 'Oct29'
+trainingsFraction = 0.95
 resnet = 50
-snapshotindex = -1 
+snapshotindex = -1
 shuffle = 1
 
-storedata_as_csv=False #if true then the time series of poses will (also) be saved as csv. 
+storedata_as_csv=True #if true then the time series of poses will (also) be saved as csv.
 
-# Note the data is always saved in hdf - format which is an efficient format 
+# Note the data is always saved in hdf - format which is an efficient format
 # that easily allows to load the full pandas multiarray at a later stage
 
 #########################################################################################
 ## For plotting (MakingLabeledVideo.py / MakingLabeledVideo_fast.py)
 #########################################################################################
 
-trainingsiterations = 500  # type the number listed in the h5 file containing the pose estimation data. The video will be generated
+trainingsiterations = 300000  # type the number listed in the h5 file containing the pose estimation data. The video will be generated
 #based on the labels for this network state.
 
 pcutoff = 0.1  # likelihood cutoff for body part in image
